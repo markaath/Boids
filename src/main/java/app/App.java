@@ -28,16 +28,14 @@ public class App extends JFrame {
     List<GameObject> boids = new ArrayList<>();
     for (int i = 0; i < 200; i++) {
       boids.add(
-        new Boid(
-          (int) (Math.random() * screenWidth),
-          (int) (Math.random() * screenHeight), 
-          p
-        )
-      );
+          new Boid(
+              (int) (Math.random() * screenWidth),
+              (int) (Math.random() * screenHeight),
+              p));
     }
     boids.add(new Obstacle(50, screenWidth / 2, screenHeight / 2));
     GameObject[] list = new GameObject[boids.size()];
-    for(int i = 0; i<boids.size(); i++){
+    for (int i = 0; i < boids.size(); i++) {
       list[i] = boids.get(i);
     }
     MainPanel pane = new MainPanel(list);
